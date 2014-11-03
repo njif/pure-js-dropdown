@@ -10,7 +10,7 @@
             isPageLoaded = true;
             ns.app = ns.ExampleApp.instance();
         }
-    };
+    }
 
     function attachOnLoadEvents() {
         if (document.addEventListener) {
