@@ -1,0 +1,36 @@
+.container {
+    max-width: 600px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.jsdropdown__example_section {
+    margin-bottom: 50px;
+}
+
+.jsdropdown__example_state {
+    padding-left: 10px;
+    color: gray;
+}
+
+pre {
+    display: block;
+    padding: 9.5px;
+<<<<<<< HEAD
+    margin: 20px 0 10px;
+=======
+    margin: 0 0 10px;
+>>>>>>> 5c186e101136eac800e9fc7af3b5e408158e1ca6
+    font-size: 13px;
+    line-height: 1.42857143;
+    color: #333;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+    overflow: auto;
+}

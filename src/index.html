@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+
+	<!--build:css assets/css/bundle.min.css -->
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/jsdropdown.css">
+	<link rel="stylesheet" href="css/common.css">
+	<!--/build-->
+
+	<title>Pure javascript dropdown</title>
+</head>
+<body>
+
+	<div class="jsdropdown__example wrapper">
+		<div class="maincontent">
+
+			<!-- example 1: activate by click -->
+			<section class="jsdropdown__example_section jsdropdown__example_section-click">
+				<div class="container">
+
+					<h3>This menu is activating by click:</h3>
+
+					<div class="jsdropdown jsdropdown-click">
+						<div class="jsdropdown__caption">Menu</div>
+						<ul class="jsdropdown__list">
+							<li class="jsdropdown__item">item 1</li>
+							<li class="jsdropdown__item" disabled="true">item 2</li>
+							<li class="jsdropdown__item"><b>item 3</b></li>
+							<li class="jsdropdown__item"><i><a href="https://e.mail.ru/" target="_blank">item 4</a></i></li>
+						</ul>
+					</div>
+
+					<span class="jsdropdown__example_state"></span>
+
+
+					<pre class="jsdropdown__example_text">
+&lt;div class="jsdropdown jsdropdown-click"&gt;
+	&lt;div class="jsdropdown__caption"&gt;Menu&lt;/div&gt;
+	&lt;ul class="jsdropdown__list"&gt;
+		&lt;li class="jsdropdown__item"&gt;item 1&lt;/li&gt;
+		&lt;li class="jsdropdown__item" disabled="true"&gt;item 2&lt;/li&gt;
+		&lt;li class="jsdropdown__item"&gt;&lt;b&gt;item 3&lt;/b&gt;&lt;/li&gt;
+		&lt;li class="jsdropdown__item"&gt;&lt;i&gt;&lt;a href="https://e.mail.ru/" target="_blank"&gt;item 4&lt;/a&gt;&lt;/i&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+					</pre>
+
+					<pre class="jsdropdown__example_text">
+menu.first.on('list.contracted', function () {
+	controls.firstMenuState.innerHTML = 'contracted';
+});
+
+menu.first.on('list.expanded', function () {
+	controls.firstMenuState.innerHTML = 'expanded';
+});
+
+menu.first.on('item.clicked', function (event) {
+	alert('First menu item clicked');
+});
+
+menu.first = new ns.Dropdown('.jsdropdown-click');
+					</pre>                
+				</div>
+			</section>
+			<!-- /example 1 -->
+
+			<!-- example 2: activate by hover -->
+			<section class="jsdropdown__example_section jsdropdown__example_section-hover">
+				<div class="container">
+
+					<h3>This menu is activating by hover:</h3>
+
+					<div class="jsdropdown jsdropdown-hover">
+						<div class="jsdropdown__caption">Menu</div>
+						<ul class="jsdropdown__list">
+							<li class="jsdropdown__item">item 1</li>
+							<li class="jsdropdown__item" disabled="true">item 2</li>
+							<li class="jsdropdown__item"><b>item 3</b></li>
+							<li class="jsdropdown__item"><i><a href="https://e.mail.ru/" target="_blank">item 4</a></i></li>
+						</ul>
+					</div>
+
+					<pre class="jsdropdown__example_text">
+&lt;div class="jsdropdown jsdropdown-hover">
+	&lt;div class="jsdropdown__caption">Menu&lt;/div>
+	&lt;ul class="jsdropdown__list">
+		&lt;li class="jsdropdown__item">item 1&lt;/li>
+		&lt;li class="jsdropdown__item" disabled="true">item 2&lt;/li>
+		&lt;li class="jsdropdown__item">&lt;b>item 3&lt;/b>&lt;/li>
+		&lt;li class="jsdropdown__item">&lt;i>&lt;a href="https://e.mail.ru/" target="_blank">item 4&lt;/a>&lt;/i>&lt;/li>
+	&lt;/ul>
+&lt;/div>
+					</pre>
+
+					<pre class="jsdropdown__example_text">
+menu.second = new ns.Dropdown('.jsdropdown-hover', { toggleType: 'hover' });
+
+var colors = [ 'red', 'blue', 'green', 'yellow'];
+
+menu.second.on('item.clicked', function (event) {
+	var colorIndex = getRandomInt(0,3);
+	var text = document.querySelector('.jsdropdown__example_section-hover .jsdropdown__example_text');
+	text.style.backgroundColor = colors[colorIndex];
+	text.style.color = 'white';
+});
+					</pre>
+
+				</div>
+			</section>
+			<!-- /example 2 -->
+
+			<!-- example 3: simple structure -->
+			<section class="jsdropdown__example_section jsdropdown__example_section-simple">
+				<div class="container">
+
+					<h3>This menu has a simple layout:</h3>
+
+					<div class="jsdropdown-simple">
+						<div>Menu</div>
+						<ul>
+							<li>item 1</li>
+							<li disabled="true">item 2</li>
+							<li><b>item 3</b></li>
+							<li><i><a href="https://e.mail.ru/" target="_blank">item 4</a></i></li>
+						</ul>
+					</div>
+
+
+					<pre class="jsdropdown__example_text">
+&lt;div class="jsdropdown-simple"&gt;
+&lt;div&gt;Menu&lt;/div&gt;
+&lt;ul&gt;
+	&lt;li&gt;item 1&lt;/li&gt;
+	&lt;li disabled="true"&gt;item 2&lt;/li&gt;
+	&lt;li&gt;&lt;b&gt;item 3&lt;/b&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;i&gt;&lt;a href="https://e.mail.ru/" target="_blank"&gt;item 4&lt;/a&gt;&lt;/i&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+					</pre>
+
+					<pre class="jsdropdown__example_text">
+menu.third = new ns.Dropdown('.jsdropdown-simple', { selectors: { caption: 'div', list: 'ul', items: 'li' }});
+					
+					</pre>
+				</div>
+			</section>
+			<!-- /example 2 -->
+		</div>
+	</div>
+	<!-- scripts -->
+
+	<!--build:js assets/js/app.min.js-->
+	<script src="js/jsdropdown.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/main.js"></script>
+	<!--/build -->
+
+	<!-- /scripts -->
+</body>
+</html>

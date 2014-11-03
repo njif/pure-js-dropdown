@@ -1,0 +1,46 @@
+.jsdropdown {
+    display: inline-block;
+}
+
+.jsdropdown__caption,
+.jsdropdown div {
+    cursor: pointer;
+    padding: 5px 10px;
+    background: #ccc;
+}
+
+.jsdropdown.expanded .jsdropdown__caption,
+.jsdropdown.expanded .jsdropdown div {
+    color: #fff;
+    background: #333;
+}
+
+.jsdropdown__list,
+.jsdropdown ul {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    box-shadow: 0 1px 3px rgba(0,0,0,.5);
+    background-color: #fff;
+    list-style: none;
+}
+
+.jsdropdown__item,
+.jsdropdown li {
+    cursor: pointer;
+    padding: 5px 20px;
+}
+
+.jsdropdown__item:hover,
+.jsdropdown li:hover {
+    color: #fff;
+    background: #666;
+}
+
+.jsdropdown__item[disabled],
+.jsdropdown li[disabled] {
+    color: #ccc;
+    cursor: text;
+    background: none;
+}
+
